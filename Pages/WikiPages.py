@@ -1,0 +1,2 @@
+class WikiHepler:
+    pass
