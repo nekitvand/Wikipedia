@@ -1,12 +1,12 @@
 from selenium import webdriver
-from Pages.WikiPages import WikiHepler
+from Pages.WikiMainPage import WikiMainHepler
 
 
 class App:
 
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.wiki = WikiHepler()
+        self.wiki = WikiMainHepler()
 
     def open_wiki_page(self):
         driver = self.driver
