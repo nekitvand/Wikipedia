@@ -6,7 +6,7 @@ class App:
 
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.wiki = WikiMainHepler()
+        self.wiki = WikiMainHepler(self)
 
     def open_wiki_page(self):
         driver = self.driver
