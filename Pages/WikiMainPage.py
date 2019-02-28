@@ -14,3 +14,11 @@ class WikiMainHepler():
 
     def search_submit(self):
         self.search().submit()
+
+    def assertion_main_page(self):
+        return len(self.driver.find_elements_by_css_selector("li[id='pt-login'")) > 0
+
+    def assertion_eatrh_page(self):
+        return self.driver.current_url
+
+
