@@ -3,3 +3,11 @@
 .idea/
 Tests/.pytest_cache
 Tests/geckodriver.log
+.pytest_cache
+Tests/__pycache__
+Application/__pycache__
+.cache
+.pytest_cache
+__pycache__
+Pages/__pycache__
+Tests/__pycache__
