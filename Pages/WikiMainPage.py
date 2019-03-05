@@ -9,8 +9,8 @@ class WikiMainHepler():
     def search(self):
         return self.driver.find_element_by_name("search")
 
-    def search_words(self):
-        self.search().send_keys("Земля")
+    def search_words(self,word):
+        self.search().send_keys(word)
 
     def search_submit(self):
         self.search().submit()
