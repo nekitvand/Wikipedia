@@ -6,3 +6,4 @@ Check this:
 * https://vk.com/@qa_ninjas-avtomatizaciya-testirovaniya-s-pomoschu-python-asserts-i-dru -- Asserts
 * https://vk.com/@qa_ninjas-avtomatizaciya-testirovaniya-s-pomoschu-pythonpytestmarks -- Pytest.Mark
 * https://vk.com/@qa_ninjas-avtomatizaciya-testirovaniya-s-pomoschu-pythonsommand-line-o -- Chrome Options
+* https://vk.com/@qa_ninjas-avtomatizaciya-testirovaniya-s-pomoschu-python-ozhidaniya -- Wait and expected contidions

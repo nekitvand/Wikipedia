@@ -1,5 +1,7 @@
 from selenium import webdriver
 from Pages.WikiMainPage import WikiMainHepler
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class App:
@@ -8,7 +10,7 @@ class App:
         browser_options = self.browser_options(options='start-maximized')
         self.driver = webdriver.Chrome(chrome_options=browser_options)
         self.wiki = WikiMainHepler(self)
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(2)
 
     def open_wiki_page(self):
         driver = self.driver
@@ -16,6 +18,12 @@ class App:
 
     def destroy(self):
         self.driver.quit()
+
+    def element_expected_conditions(self,method,locator):
+        return WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((method,locator)))
+
+    def visibility_element_expected_conditions(self,element):
+        return WebDriverWait(self.driver, 5).until(EC.visibility_of(element))
 
     def browser_options(self, options):
         chrome_options = webdriver.ChromeOptions()

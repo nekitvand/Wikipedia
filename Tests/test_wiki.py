@@ -8,6 +8,7 @@ def test_wiki_main_page_parametrize(wikifixture,wiki_words):
     wikifixture.open_wiki_page()
     assert "Википедия" in wikifixture.driver.title
     assert wikifixture.wiki.assertion_main_page() == True
+    wikifixture.wiki.tab_for_discussions()
     wikifixture.wiki.search_words(wiki_words)
     wikifixture.wiki.search_submit()
     time.sleep(1)
