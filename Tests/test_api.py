@@ -1,4 +1,5 @@
-
+import os
+import json
 
 def test_cat_facts(api):
     cat_facts = api.facts.cat()
@@ -14,4 +15,7 @@ def test_dog_facts(api):
 def test_yandex_translate(api):
     translate = api.facts.yandex_translate()
     assert translate["text"] != '' or None
+    with open((os.path.abspath(r"..\animal_facts.json")),'w+',encoding="UTF-8") as f:
+        f.write(json.dumps(translate["text"],ensure_ascii=False))
+
 
