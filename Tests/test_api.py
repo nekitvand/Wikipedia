@@ -1,5 +1,9 @@
 import os
 import json
+import pytest
+from config.config import load_animal_facts
+
+load = load_animal_facts()
 
 def test_cat_facts(api):
     cat_facts = api.facts.cat()
@@ -18,4 +22,8 @@ def test_yandex_translate(api):
     with open((os.path.abspath(r"..\animal_facts.json")),'w+',encoding="UTF-8") as f:
         f.write(json.dumps(translate["text"],ensure_ascii=False))
 
-
+@pytest.mark.parametrize("animal_facts",load)
+def test_yandex_translate_multilang(api,animal_facts):
+    translate = api.facts.yandex_translate_multilang(lang='ru-en',text=animal_facts)
+    assert translate["text"] != '' or None
+    print(translate)
