@@ -5,7 +5,7 @@ from Application.api import Api_from_facts
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="yandex")
+    parser.addoption("--browser", action="store", default=None)
 
 
 @pytest.fixture(scope="session")

@@ -9,14 +9,19 @@ class App:
 
     def __init__(self,browser):
         self.browser = browser
-        browser_options = self.browser_options(options='start-maximized')
+        chrome_options = self.chrome_options(options='start-maximized')
+        yandex_options = self.yandex_options(options='start-maximized')
         if browser == 'yandex':
-            self.driver = webdriver.Chrome(executable_path='C:/1/chromedriver.exe', chrome_options=browser_options,)
+            self.driver = webdriver.Chrome(executable_path='C:/1/chromedriver.exe', chrome_options=yandex_options)
         elif browser == 'ie':
             ie_options = Options()
             ie_options.ignore_protected_mode_settings = True
             ie_options.ignore_zoom_level = True
             self.driver = webdriver.Ie(executable_path=r'C:\1\IEDriverServer.exe', options=ie_options)
+        elif browser == 'chrome':
+            self.driver = webdriver.Chrome(executable_path='C:/1/chromedriver.exe', chrome_options=chrome_options)
+        elif browser == 'firefox':
+            self.driver = webdriver.Chrome(executable_path='C:/1/gekodriver.exe')
         else:
             raise ValueError
         self.wiki = WikiMainHepler(self)
@@ -35,13 +40,22 @@ class App:
     def visibility_element_expected_conditions(self,element):
         return WebDriverWait(self.driver, 5).until(EC.visibility_of(element))
 
-    def browser_options(self, options):
+    def chrome_options(self, options):
         chrome_options = webdriver.ChromeOptions()
-        if chrome_options.add_argument(options) == 'headless':
+        if options == 'headless':
+            chrome_options.add_argument('--headless')
             return chrome_options
-        elif chrome_options.add_argument(options) == "start-maximized":
-            chrome_options.binary_location = "C:/Users/Vandyshev.NS/AppData/Local/Yandex/YandexBrowser/Application/browser.exe"
+        elif options == 'start-maximized':
+            chrome_options.add_argument('--start-maximized')
             return chrome_options
 
-
-
+    def yandex_options(self,options):
+        yandex_options = webdriver.ChromeOptions()
+        if options == 'headless':
+            yandex_options.binary_location = "C:/Users/Vandyshev.NS/AppData/Local/Yandex/YandexBrowser/Application/browser.exe"
+            yandex_options.add_argument('--headless')
+            return  yandex_options
+        elif options == 'start-maximized':
+            yandex_options.binary_location = "C:/Users/Vandyshev.NS/AppData/Local/Yandex/YandexBrowser/Application/browser.exe"
+            yandex_options.add_argument('--start-maximized')
+            return yandex_options
