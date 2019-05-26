@@ -9,3 +9,4 @@ Check this:
 * https://vk.com/@qa_ninjas-avtomatizaciya-testirovaniya-s-pomoschu-python-ozhidaniya -- Wait and expected contidions
 * https://vk.com/@qa_ninjas-avtomatizaciya-testirovaniya-s-pomoschu-python-api-testirova -- API testing with PageObject
 * https://vk.com/@qa_ninjas-avtomatizaciya-testirovaniya-s-pomoschu-python-integracionno -- Integration testing with API
+* https://vk.com/@qa_ninjas-uchimsya-zapuskat-ie-yandex-browser-i-drugie-brauzery -- Testing with IE and Yandex Browser
